@@ -1,0 +1,32 @@
+{
+    "checkLogin" : {
+        "query": "SELECT userId, role FROM users WHERE userName = ? AND password = ?;",
+        "type":"singleRow",
+        "method":"get"
+    },
+    "getAllArticles" : {
+        "query": "SELECT * FROM articles",
+        "type":"rows",        
+        "method":"each"
+    },
+    "getArticleById" : {
+        "query": "SELECT * FROM articles WHERE articleId = ?",
+        "type":"singleRow",        
+        "method":"get"
+    },
+    "deleteArticle" : {
+        "query": "DELETE FROM articles WHERE articleId = ?",
+        "type":"success",        
+        "method":"run"
+    },
+    "createArticle" : {
+        "query": "INSERT INTO articles (title,subtitle,body) VALUES (?,?,?);",
+        "type":"success",        
+        "method":"run"
+    },
+    "updateArticle" : {
+        "query": "UPDATE articles SET title = ?,subtitle=?,body=? WHERE articleId = ?",
+        "type":"success",        
+        "method":"run"
+    }
+}
